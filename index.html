@@ -63,7 +63,7 @@
       })
 
       $('html').click(function() {
-        // Reward Rates by Rita Jita, site made by Rashad Charante
+        // Reward Rates by Max Collins, site made by Max Collins, Pulled from github code of Rita Jita
         var collateral = $('#collateral').val();
         // Sanitizes inputs by getting rid of commas and other stuff
         collateral = collateral.replace(/[^\d\.\-\ ]/g, '');
@@ -75,10 +75,10 @@
         // This will be capped to 1% maximum further down.
         var pickupFee = 0;
         // Set the minimum/basic price per jump
-        var pricePerJump = 500000;
+        var pricePerJump = 1000000;
         // Increase the precentage of the collateral that we take based on jumps by this percentage
         // This is to reflect the increased risk and time spent by the hauler.
-        var incPerJump = 1.002; 
+        var incPerJump = 1.004; 
         var pickupReward = 0;
         var reward = 0;
         var baseRate = 0;
@@ -114,11 +114,11 @@
         
         // Extra Fees
         if ($('#rush').prop('checked')) {
-          reward = reward * 2;
+          reward = reward * 15;
         }
         
         if ($('#lowsec').prop('checked')) {
-          reward = reward * 2;
+          reward = reward * 50;
         }
         // updates prices displayed in text
         if (reward > 0) {
